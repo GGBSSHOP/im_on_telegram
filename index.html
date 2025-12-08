@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ВАЖНО! Добавляем -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Я в тг</title>
   <link rel="icon" href="моя_иконка.png" type="image/png">
   
@@ -17,38 +17,34 @@
     
     /* Базовые стили для адаптивности */
     * {
-      box-sizing: border-box; /* Чтобы padding и border не ломали ширину */
+      box-sizing: border-box;
     }
     
-    /* Применяем шрифт ко всему сайту */
     body {
       font-family: 'MyCustomFont', sans-serif;
       background-color: #162639;
       margin: 0;
-      padding: 20px; /* Вместо margin для body */
+      padding: 20px;
       min-height: 100vh;
-      word-wrap: break-word; /* Перенос длинных слов */
+      word-wrap: break-word;
       overflow-wrap: break-word;
     }
     
-    /* Контейнер для всего контента */
     .container {
-      max-width: 800px; /* Максимальная ширина на больших экранах */
+      max-width: 800px;
       width: 100%;
-      margin: 0 auto; /* Центрирование */
+      margin: 0 auto;
     }
     
-    /* Стили для главного заголовка */
     h1 {
       font-family: 'MyCustomFont', Arial, sans-serif;
       color: #FFFFFFE6;
       margin-bottom: 30px;
       text-align: center;
-      font-size: clamp(24px, 5vw, 32px); /* Адаптивный размер */
+      font-size: clamp(24px, 5vw, 32px);
       line-height: 1.3;
     }
   
-    /* Стили для пунктов - используем DIV вместо H2! */
     .info-item {
       color: #FFFFFFE6;
       margin-bottom: 20px;
@@ -56,14 +52,59 @@
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 10px;
       border-left: 4px solid #FFFFFFE6;
-      
-      /* Адаптивный размер текста */
       font-size: clamp(16px, 3vw, 20px);
       line-height: 1.5;
-      
-      /* Автоматические переносы */
       word-break: break-word;
       overflow-wrap: break-word;
+    }
+    
+    /* СТИЛЬ ДЛЯ ЗАМЕНЫ СИМВОЛОВ • НА ИЗОБРАЖЕНИЯ */
+    /* Обертка для форматированного текста */
+    .bullet-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    /* Стиль для изображения-буллита */
+    .custom-bullet {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      background-image: url('bullet.png'); /* Ваше изображение */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    /* Стиль для цифры между буллитами */
+    .bullet-number {
+      display: inline-block;
+      vertical-align: middle;
+      color: #FFFFFFE6;
+    }
+    
+    /* Адаптивность для изображений */
+    @media (max-width: 768px) {
+      .custom-bullet {
+        width: 21px;
+        height: 21px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .custom-bullet {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .custom-bullet {
+        width: 15px;
+        height: 15px;
+      }
     }
     
     /* Медиазапросы для разных устройств */
@@ -75,7 +116,7 @@
       .info-item {
         padding: 12px;
         margin-bottom: 15px;
-        font-size: 17px; /* Чуть меньше на планшетах */
+        font-size: 17px;
       }
     }
     
@@ -92,12 +133,11 @@
       .info-item {
         padding: 10px;
         margin-bottom: 12px;
-        font-size: 16px; /* Оптимально для мобильных */
+        font-size: 16px;
         border-left-width: 3px;
       }
     }
     
-    /* Для очень маленьких экранов */
     @media (max-width: 360px) {
       .info-item {
         font-size: 15px;
@@ -110,25 +150,45 @@
   <div class="container">
     <h1>Информация о @Sveng_shishka:</h1>
     
-    <!-- Используем div вместо h2 для пунктов -->
+    <!-- Измененная структура HTML -->
     <div class="info-item">
-      <strong>•1•</strong> Я крайне редко использую Telegram (чаще Nekogram).
+      <span class="bullet-wrapper">
+        <span class="custom-bullet"></span>
+        <span class="bullet-number">1</span>
+        <span class="custom-bullet"></span>
+      </span> Я крайне редко использую Telegram (чаще Nekogram).
     </div>
     
     <div class="info-item">
-      <strong>•2•</strong> Я ненавижу людей.
+      <span class="bullet-wrapper">
+        <span class="custom-bullet"></span>
+        <span class="bullet-number">2</span>
+        <span class="custom-bullet"></span>
+      </span> Я ненавижу людей.
     </div>
     
     <div class="info-item">
-      <strong>•3•</strong> Я не несу ответственности за все чаты/каналы, которые не являются личными или не принадлежат мне.
+      <span class="bullet-wrapper">
+        <span class="custom-bullet"></span>
+        <span class="bullet-number">3</span>
+        <span class="custom-bullet"></span>
+      </span> Я не несу ответственности за все чаты/каналы, которые не являются личными или не принадлежат мне.
     </div>
     
     <div class="info-item">
-      <strong>•4•</strong> Я, как и любой другой человек, бываю занят.
+      <span class="bullet-wrapper">
+        <span class="custom-bullet"></span>
+        <span class="bullet-number">4</span>
+        <span class="custom-bullet"></span>
+      </span> Я, как и любой другой человек, бываю занят.
     </div>
     
     <div class="info-item">
-      <strong>•5•</strong> Я могу наорать или загнобить за раздражающее сообщение. (буквально за любое).
+      <span class="bullet-wrapper">
+        <span class="custom-bullet"></span>
+        <span class="bullet-number">5</span>
+        <span class="custom-bullet"></span>
+      </span> Я могу наорать или загнобить за раздражающее сообщение. (буквально за любое).
     </div>
   </div>
 </body>
