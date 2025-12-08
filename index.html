@@ -2,47 +2,133 @@
 <html>
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ВАЖНО! Добавляем -->
   <title>Сайт которым владеет @Sveng_shishka</title>
   
   <style>
     /* Подключаем шрифт */
     @font-face {
       font-family: 'MyCustomFont';
-      src: url('minecraft-ten.ttf') format('truetype');
+      src: url('/storage/emulated/0/дада/шрифты/minecraft-ten.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
     }
     
+    /* Базовые стили для адаптивности */
+    * {
+      box-sizing: border-box; /* Чтобы padding и border не ломали ширину */
+    }
+    
     /* Применяем шрифт ко всему сайту */
     body {
-  font-family: 'MyCustomFont', sans-serif;
-  background-color: #162639; /* Светло-серый */
-  margin: 20px;
-}
+      font-family: 'MyCustomFont', sans-serif;
+      background-color: #162639;
+      margin: 0;
+      padding: 20px; /* Вместо margin для body */
+      min-height: 100vh;
+      word-wrap: break-word; /* Перенос длинных слов */
+      overflow-wrap: break-word;
+    }
     
-    /* Стили для заголовков */
+    /* Контейнер для всего контента */
+    .container {
+      max-width: 800px; /* Максимальная ширина на больших экранах */
+      width: 100%;
+      margin: 0 auto; /* Центрирование */
+    }
+    
+    /* Стили для главного заголовка */
     h1 {
       font-family: 'MyCustomFont', Arial, sans-serif;
       color: #FFFFFFE6;
-      margin-bottom: 15px;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: clamp(24px, 5vw, 32px); /* Адаптивный размер */
+      line-height: 1.3;
     }
   
-    /*Стили для текста*/
-    h2 {
-      font-family: 'MyCustomFont', Arial, sans-serif;
+    /* Стили для пунктов - используем DIV вместо H2! */
+    .info-item {
       color: #FFFFFFE6;
-      margin-bottom: 13px;
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      border-left: 4px solid #4a90e2;
+      
+      /* Адаптивный размер текста */
+      font-size: clamp(16px, 3vw, 20px);
+      line-height: 1.5;
+      
+      /* Автоматические переносы */
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
     
+    /* Медиазапросы для разных устройств */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+      
+      .info-item {
+        padding: 12px;
+        margin-bottom: 15px;
+        font-size: 17px; /* Чуть меньше на планшетах */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      
+      h1 {
+        margin-bottom: 20px;
+        font-size: 22px;
+      }
+      
+      .info-item {
+        padding: 10px;
+        margin-bottom: 12px;
+        font-size: 16px; /* Оптимально для мобильных */
+        border-left-width: 3px;
+      }
+    }
+    
+    /* Для очень маленьких экранов */
+    @media (max-width: 360px) {
+      .info-item {
+        font-size: 15px;
+        line-height: 1.4;
+      }
+    }
   </style>
 </head>
 <body>
-            <h1>Информация о @Sveng_shishka:</h1>
-  
-            <h2>•1• Я максимально редко<br>использую telegram.<br>(чаще nekogram).</h2>
-            <h2>•2• Я ненавижу людей.</h2>
-            <h2>•3• Я не несу<br>ответственность за все<br>чаты/каналы которые не<br>являются личными или<br>не пренадлежат мне.</h2>
-            <h2>•4• Я как и любой другой<br>человек бываю занят.</h2>
-            <h2>•5• Я могу наорать или<br>загнобить за<br>раздрожающие<br>сообщение.<br>(буквально за любое).</h2>
+  <div class="container">
+    <h1>Информация о @Sveng_shishka:</h1>
+    
+    <!-- Используем div вместо h2 для пунктов -->
+    <div class="info-item">
+      <strong>•1•</strong> Я максимально редко использую telegram. (чаще nekogram).
+    </div>
+    
+    <div class="info-item">
+      <strong>•2•</strong> Я ненавижу людей.
+    </div>
+    
+    <div class="info-item">
+      <strong>•3•</strong> Я не несу ответственность за все чаты/каналы которые не являются личными или не принадлежат мне.
+    </div>
+    
+    <div class="info-item">
+      <strong>•4•</strong> Я как и любой другой человек бываю занят.
+    </div>
+    
+    <div class="info-item">
+      <strong>•5•</strong> Я могу наорать или загнобить за раздражающие сообщение. (буквально за любое).
+    </div>
+  </div>
 </body>
 </html>
