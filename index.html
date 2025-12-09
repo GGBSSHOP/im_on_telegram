@@ -63,10 +63,10 @@
     .bullet-wrapper {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 0px;
     }
     
-    /* Стиль для изображения-буллита */
+    /* ОБЩИЙ стиль для изображения-буллита */
     .custom-bullet {
       width: 16px;
       height: 16px;
@@ -78,32 +78,67 @@
       background-position: center;
     }
     
-    /* Стиль для цифры между буллитами */
-    .bullet-number {
+    /* БУЛЛИТЫ ДЛЯ ЗАГОЛОВКА (без смещения) */
+    .header-bullet {
+      /* Используем значения из .custom-bullet, но без смещения */
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      background-image: url('bullet.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    /* БУЛЛИТЫ ДЛЯ ПУНКТОВ СПИСКА (со смещением) */
+    .item-bullet {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      background-image: url('bullet.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      top: 7px; /* Смещение на 7px вниз для пунктов */
+    }
+    
+    /* ЦИФРЫ для пунктов списка (со смещением) */
+    .item-number {
       display: inline-block;
       vertical-align: middle;
       color: #FFFFFFE6;
+      position: relative;
+      top: 7px; /* Смещение на 7px вниз для пунктов */
     }
     
     /* Адаптивность для изображений */
     @media (max-width: 768px) {
-      .custom-bullet {
-        width: 21px;
-        height: 21px;
+      .custom-bullet,
+      .header-bullet,
+      .item-bullet {
+        width: 33px;
+        height: 33px;
       }
     }
     
     @media (max-width: 480px) {
-      .custom-bullet {
-        width: 18px;
-        height: 18px;
+      .custom-bullet,
+      .header-bullet,
+      .item-bullet {
+        width: 30px;
+        height: 30px;
       }
     }
     
     @media (max-width: 360px) {
-      .custom-bullet {
-        width: 15px;
-        height: 15px;
+      .custom-bullet,
+      .header-bullet,
+      .item-bullet {
+        width: 27px;
+        height: 27px;
       }
     }
     
@@ -148,49 +183,58 @@
 </head>
 <body>
   <div class="container">
-    <h1><span class="custom-bullet"></span>Информация о<span class="custom-bullet"></span></h1>
+    <!-- В заголовке используем header-bullet (без смещения) -->
+    <h1><span class="header-bullet"></span>Информация о<span class="header-bullet"></span></h1>
     <h1>@Sveng_shishka:<h1>
     
-    <!-- Измененная структура HTML -->
+    <!-- В пунктах используем item-bullet и item-number (со смещением) -->
     <div class="info-item">
       <span class="bullet-wrapper">
-        <span class="custom-bullet"></span>
-        <span class="bullet-number">1</span>
-        <span class="custom-bullet"></span>
+        <span class="item-bullet"></span>
+        <span class="item-number">1</span>
+        <span class="item-bullet"></span>
       </span> Я крайне редко использую Telegram (чаще Nekogram).
     </div>
     
     <div class="info-item">
       <span class="bullet-wrapper">
-        <span class="custom-bullet"></span>
-        <span class="bullet-number">2</span>
-        <span class="custom-bullet"></span>
+        <span class="item-bullet"></span>
+        <span class="item-number">2</span>
+        <span class="item-bullet"></span>
       </span> Я ненавижу людей.
     </div>
     
     <div class="info-item">
       <span class="bullet-wrapper">
-        <span class="custom-bullet"></span>
-        <span class="bullet-number">3</span>
-        <span class="custom-bullet"></span>
+        <span class="item-bullet"></span>
+        <span class="item-number">3</span>
+        <span class="item-bullet"></span>
       </span> Я не несу ответственности за все чаты/каналы, которые не являются личными или не принадлежат мне.
     </div>
     
     <div class="info-item">
       <span class="bullet-wrapper">
-        <span class="custom-bullet"></span>
-        <span class="bullet-number">4</span>
-        <span class="custom-bullet"></span>
+        <span class="item-bullet"></span>
+        <span class="item-number">4</span>
+        <span class="item-bullet"></span>
       </span> Я, как и любой другой человек, бываю занят.
     </div>
     
     <div class="info-item">
       <span class="bullet-wrapper">
-        <span class="custom-bullet"></span>
-        <span class="bullet-number">5</span>
-        <span class="custom-bullet"></span>
+        <span class="item-bullet"></span>
+        <span class="item-number">5</span>
+        <span class="item-bullet"></span>
       </span> Я могу наорать или загнобить за раздражающее сообщение. (буквально за любое).
+    </div>
+      
+    <div class="info-item">
+      <span class="bullet-wrapper">
+        <span class="item-bullet"></span>
+        <span class="item-number">6</span>
+        <span class="item-bullet"></span>
+      </span> Я родился 6 декабря.
     </div>
   </div>
 </body>
-</html>
+    </html>
