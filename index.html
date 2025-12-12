@@ -10,7 +10,7 @@
     /* Подключаем шрифт */
     @font-face {
       font-family: 'MyCustomFont';
-      src: url('minecraft-ten.ttf') format('truetype');
+      src: url('my-font.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
     }
@@ -19,7 +19,7 @@
     * {
       box-sizing: border-box;
     }
-    
+  
     body {
       font-family: 'MyCustomFont', sans-serif;
       background-color: #162639;
@@ -68,8 +68,8 @@
     
     /* ОБЩИЙ стиль для изображения-буллита */
     .custom-bullet {
-      width: 16px;
-      height: 16px;
+      width: 1px;
+      height: 1px;
       display: inline-block;
       vertical-align: middle;
       background-image: url('bullet.png'); /* Ваше изображение */
@@ -93,8 +93,8 @@
     
     /* БУЛЛИТЫ ДЛЯ ПУНКТОВ СПИСКА (со смещением) */
     .item-bullet {
-      width: 12px;
-      height: 13px;
+      width: 1px;
+      height: 1px;
       display: inline-block;
       vertical-align: middle;
       background-image: url('bullet.png');
@@ -111,7 +111,7 @@
       vertical-align: middle;
       color: #FFFFFFE6;
       position: relative;
-      top: 7px; /* Смещение на 7px вниз для пунктов */
+      top: 8px; /* Смещение на 7px вниз для пунктов */
     }
     
     /* Адаптивность для изображений */
@@ -178,6 +178,22 @@
         font-size: 15px;
         line-height: 1.4;
       }
+      
+      a {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+/* Опционально: стиль при наведении */
+a:hover {
+  color: #F0F0F0 !important;
+  text-decoration: underline !important;
+}
+
+/* Стиль для посещенной ссылки */
+a:visited {
+  color: #E0E0E0 !important;
+}
     }
   </style>
 </head>
@@ -235,6 +251,31 @@
         <span class="item-bullet"></span>
       </span> Я родился 6 декабря.
     </div>
+      
+    <div class="info-item">
+      <span class="bullet-wrapper">
+        <span class="item-bullet"></span>
+        <span class="item-number">7</span>
+        <span class="item-bullet"></span>
+      </span> Обращатся ко мне в группах можно только так: Sveng, Свендж, Свенжди.
+    </div>
+      
+    <div class="info-item">
+      <span class="bullet-wrapper">
+        <span class="item-bullet"></span>
+        <span class="item-number">8</span>
+        <span class="item-bullet"></span>
+      </span> Мои проекты:<br> Этот сайт: <a href="https://ggbsshop.github.io/im_on_telegram/" target="_blank">
+        https://ggbsshop.github.io/im_on_telegram/
+        </a>
+      <br> Рассказ моего друга:<br><a href="https://ggbsshop.github.io/book/" target="_blank">
+        https://ggbsshop.github.io/book/
+        </a>
+      <br> Правила для чата моего друга (<a href="https://t.me/kultadekvatachat">https://t.me/kultadekvatachat</a>):<br><a href="https://ggbsshop.github.io/Chat_rules/" target="_blank">
+        https://ggbsshop.github.io/Chat_rules/
+        </a>
+    </div>
+    
   </div>
 </body>
     </html>
