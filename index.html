@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>I'm on Telegram</title>
   <link rel="icon" href="моя_иконка.png" type="image/png">
-  
   <style>
-    /* Подключаем шрифт */
     @font-face {
       font-family: 'MyCustomFont';
       src: url('my-font.ttf') format('truetype');
@@ -15,210 +13,272 @@
       font-style: normal;
     }
     
-    /* Базовые стили для адаптивности */
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
   
     body {
-      font-family: 'MyCustomFont', sans-serif;
+      font-family: 'MyCustomFont', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
       background-color: #162639;
       margin: 0;
-      padding: 20px;
+      padding: 40px 32px;
       min-height: 100vh;
       word-wrap: break-word;
       overflow-wrap: break-word;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
     .container {
-      max-width: 800px;
+      max-width: 1100px;
       width: 100%;
       margin: 0 auto;
     }
     
     h1 {
-      font-family: 'MyCustomFont', Arial, sans-serif;
+      font-family: 'MyCustomFont', 'Segoe UI', Arial, sans-serif;
       color: #FFFFFFE6;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       text-align: center;
-      font-size: clamp(24px, 5vw, 32px);
-      line-height: 1.3;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.2;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
     }
-  
+    
     .info-item {
       color: #FFFFFFE6;
-      margin-bottom: 20px;
-      padding: 15px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      border-left: 4px solid #FFFFFFE6;
-      font-size: clamp(16px, 3vw, 20px);
-      line-height: 1.5;
+      margin-bottom: 22px;
+      padding: 20px 26px;
+      background-color: rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      border-left: 5px solid #FFFFFFE6;
+      font-size: 18px;
+      line-height: 1.55;
       word-break: break-word;
       overflow-wrap: break-word;
     }
     
-    /* СТИЛЬ ДЛЯ ЗАМЕНЫ СИМВОЛОВ • НА ИЗОБРАЖЕНИЯ */
-    /* Обертка для форматированного текста */
     .bullet-wrapper {
       display: inline-flex;
       align-items: center;
-      gap: 0px;
+      gap: 10px;
+      margin-right: 14px;
+      flex-shrink: 0;
     }
     
-    /* ОБЩИЙ стиль для изображения-буллита */
-    .custom-bullet {
-      width: 1px;
-      height: 1px;
-      display: inline-block;
-      vertical-align: middle;
-      background-image: url('bullet.png'); /* Ваше изображение */
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    
-    /* БУЛЛИТЫ ДЛЯ ЗАГОЛОВКА (без смещения) */
     .header-bullet {
-      /* Используем значения из .custom-bullet, но без смещения */
-      width: 16px;
-      height: 16px;
+      width: 34px;
+      height: 34px;
       display: inline-block;
-      vertical-align: middle;
       background-image: url('bullet.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      vertical-align: middle;
+      flex-shrink: 0;
     }
     
-    /* БУЛЛИТЫ ДЛЯ ПУНКТОВ СПИСКА (со смещением) */
     .item-bullet {
-      width: 1px;
-      height: 1px;
+      width: 26px;
+      height: 26px;
       display: inline-block;
-      vertical-align: middle;
       background-image: url('bullet.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      position: relative;
-      top: 7px; /* Смещение на 7px вниз для пунктов */
+      vertical-align: middle;
     }
-  
-.custom-emoji {
-  vertical-align: -7px; /* Центрирует по высоте текста */
-}
     
-    /* ЦИФРЫ для пунктов списка (со смещением) */
     .item-number {
       display: inline-block;
-      vertical-align: middle;
       color: #FFFFFFE6;
-      position: relative;
-      top: 8px; /* Смещение на 7px вниз для пунктов */
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1;
     }
     
-    /* Адаптивность для изображений */
+    .custom-emoji {
+      vertical-align: middle;
+      width: 26px;
+      height: 26px;
+      margin-right: 8px;
+      display: inline-block;
+    }
+    
+    a {
+      color: #FFFFFF !important;
+      text-decoration: none !important;
+      background-color: transparent;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      transition: border-color 0.2s;
+      word-break: break-all;
+      display: inline;
+    }
+    
+    a:hover {
+      border-bottom-color: #FFFFFF;
+    }
+    
+    a:visited {
+      color: #FFFFFF !important;
+    }
+    
+    .project-line {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+    }
+    
+    .project-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    
+    .projects-container {
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .projects-heading {
+      font-weight: 500;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    @media (min-width: 1025px) {
+      .project-line a {
+        position: relative;
+        top: -2px;
+      }
+    }
+    
     @media (max-width: 768px) {
-      .custom-bullet,
-      .header-bullet,
+      body {
+        padding: 24px 20px;
+      }
+      
+      .info-item {
+        padding: 16px 20px;
+        font-size: 16px;
+        margin-bottom: 18px;
+      }
+      
+      .header-bullet {
+        width: 28px;
+        height: 28px;
+      }
+      
       .item-bullet {
-        width: 33px;
-        height: 33px;
+        width: 22px;
+        height: 22px;
+      }
+      
+      .item-number {
+        font-size: 18px;
+      }
+      
+      .custom-emoji {
+        width: 22px;
+        height: 22px;
+      }
+      
+      .project-label {
+        font-size: 16px;
+      }
+      
+      .project-line {
+        gap: 6px;
+      }
+      
+      .project-line a {
+        position: static;
+        top: auto;
       }
     }
     
     @media (max-width: 480px) {
-      .custom-bullet,
-      .header-bullet,
-      .item-bullet {
-        width: 30px;
-        height: 30px;
-      }
-    }
-    
-    @media (max-width: 360px) {
-      .custom-bullet,
-      .header-bullet,
-      .item-bullet {
-        width: 27px;
-        height: 27px;
-      }
-    }
-    
-    /* Медиазапросы для разных устройств */
-    @media (max-width: 768px) {
       body {
-        padding: 15px;
+        padding: 16px 14px;
       }
       
       .info-item {
-        padding: 12px;
-        margin-bottom: 15px;
-        font-size: 17px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      body {
-        padding: 10px;
-      }
-      
-      h1 {
-        margin-bottom: 20px;
-        font-size: 22px;
-      }
-      
-      h7 {
-        margin-bottom: 14px;
-        font-size: 16px;
-      }
-      
-      .info-item {
-        padding: 10px;
-        margin-bottom: 12px;
-        font-size: 16px;
-        border-left-width: 3px;
-      }
-    }
-    
-    @media (max-width: 360px) {
-      .info-item {
+        padding: 14px 16px;
         font-size: 15px;
-        line-height: 1.4;
+        border-left-width: 4px;
+      }
+      
+      .bullet-wrapper {
+        gap: 6px;
+        margin-right: 8px;
+      }
+      
+      .header-bullet {
+        width: 24px;
+        height: 24px;
+      }
+      
+      .item-bullet {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .item-number {
+        font-size: 16px;
+      }
+      
+      .project-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-top: 10px;
+      }
+      
+      .project-label {
+        margin-bottom: 2px;
       }
       
       a {
-  color: #FFFFFF !important;
-  text-decoration: none !important;
-}
-
-/* Опционально: стиль при наведении */
-a:hover {
-  color: #F0F0F0 !important;
-  text-decoration: underline !important;
-}
-
-/* Стиль для посещенной ссылки */
-a:visited {
-  color: #E0E0E0 !important;
-}
+        word-break: break-all;
+      }
+      
+      .project-line a {
+        position: static;
+        top: auto;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- В заголовке используем header-bullet (без смещения) -->
-    <h1><span class="header-bullet"></span>Информация о<span class="header-bullet"></span></h1>
-    <h1>@Sveng_shishka:<h1>
+    <h1>
+      <span class="header-bullet"></span>
+      Информация о
+      <span class="header-bullet"></span>
+    </h1>
+    <h1>@Svendzh:</h1>
     
-    <!-- В пунктах используем item-bullet и item-number (со смещением) -->
     <div class="info-item">
       <span class="bullet-wrapper">
         <span class="item-bullet"></span>
         <span class="item-number">1</span>
         <span class="item-bullet"></span>
-      </span> Я крайне редко использую «Telegram», чаще – «Nekogram».
+      </span> 
+      Я крайне редко использую «Telegram», чаще – «exteraGram».
     </div>
     
     <div class="info-item">
@@ -226,7 +286,8 @@ a:visited {
         <span class="item-bullet"></span>
         <span class="item-number">2</span>
         <span class="item-bullet"></span>
-      </span> Я ненавижу людей.
+      </span> 
+      Я ненавижу людей.
     </div>
     
     <div class="info-item">
@@ -234,7 +295,8 @@ a:visited {
         <span class="item-bullet"></span>
         <span class="item-number">3</span>
         <span class="item-bullet"></span>
-      </span> Я не несу ответственности за все чаты/каналы, которые не являются личными или не принадлежат мне.
+      </span> 
+      Я не несу ответственности за все чаты/каналы, которые не являются личными или не принадлежат мне.
     </div>
     
     <div class="info-item">
@@ -242,7 +304,8 @@ a:visited {
         <span class="item-bullet"></span>
         <span class="item-number">4</span>
         <span class="item-bullet"></span>
-      </span> Я, как и любой другой человек, бываю занят.
+      </span> 
+      Я, как и любой другой человек, бываю занят.
     </div>
     
     <div class="info-item">
@@ -250,7 +313,8 @@ a:visited {
         <span class="item-bullet"></span>
         <span class="item-number">5</span>
         <span class="item-bullet"></span>
-      </span> Я могу наорать или загнобить за раздражающее сообщение (буквально за любое).
+      </span> 
+      Я могу наорать или загнобить за раздражающее сообщение (буквально за любое).
     </div>
       
     <div class="info-item">
@@ -258,7 +322,8 @@ a:visited {
         <span class="item-bullet"></span>
         <span class="item-number">6</span>
         <span class="item-bullet"></span>
-      </span> Я родился 6 декабря.
+      </span> 
+      Обращаться ко мне в группах можно только так: Svendzh, Свендж, Свенжди.
     </div>
       
     <div class="info-item">
@@ -266,47 +331,59 @@ a:visited {
         <span class="item-bullet"></span>
         <span class="item-number">7</span>
         <span class="item-bullet"></span>
-      </span> Обращаться ко мне в группах можно только так: Sveng, Свендж, Свенжди.
+      </span> 
+      <div class="projects-container">
+        <span class="projects-heading">Мои проекты:</span>
+        
+        <div class="project-line">
+          <span class="project-label">
+            <img src="bullet.png" alt="" class="custom-emoji">
+            Этот сайт:
+          </span>
+          <a href="https://ggbsshop.github.io/im_on_telegram/" target="_blank">ссылка</a>
+        </div>
+        
+        <div class="project-line">
+          <span class="project-label">
+            <img src="bullet.png" alt="" class="custom-emoji">
+            Рассказ моего друга:
+          </span>
+          <a href="https://ggbsshop.github.io/book/" target="_blank">ссылка</a>
+        </div>
+        
+        <div class="project-line">
+          <span class="project-label">
+            <img src="bullet.png" alt="" class="custom-emoji">
+            3D куб
+          </span>
+          <a href="https://ggbsshop.github.io/Cubic/" target="_blank">ссылка</a>
+        </div>
+        
+        <div class="project-line">
+          <span class="project-label">
+            <img src="bullet.png" alt="" class="custom-emoji">
+            Правила моего чата:
+          </span>
+          <a href="https://ggbsshop.github.io/tgcc/" target="_blank">ссылка</a>
+        </div>
+        
+        <div class="project-line">
+          <span class="project-label">
+            <img src="0.png" alt="" class="custom-emoji">
+            Gradient artist:
+          </span>
+          <a href="https://t.me/JGifts_bot" target="_blank">ссылка</a>
+        </div>
+        
+        <div class="project-line">
+          <span class="project-label">
+            <img src="1.png" alt="" class="custom-emoji">
+            Моя модификация на python игру Cyber-Arena моего друга:
+          </span>
+          <a href="https://github.com/GGBSSHOP/Adekvat-game-my-version" target="_blank">ссылка</a>
+        </div>
+      </div>
     </div>
-      
-    <div class="info-item">
-      <span class="bullet-wrapper">
-        <span class="item-bullet"></span>
-        <span class="item-number">8</span>
-        <span class="item-bullet"></span>
-      </span><h7>Мои проекты:
-        <pre></pre>
-         <br><img src="bullet.png" alt="Мой смайлик" class="custom-emoji" width="24" height="24">Этот сайт:</h7><a href="https://ggbsshop.github.io/im_on_telegram/" target="_blank">
-        https://ggbsshop.github.io/im_on_telegram/;
-        </a>
-      <br><h7><img src="bullet.png" alt="Мой смайлик" class="custom-emoji" width="24" height="24">Рассказ моего друга:</h7><br><a href="https://ggbsshop.github.io/book/" target="_blank">
-        https://ggbsshop.github.io/book/;
-        </a>
-      <br><h7><img src="bullet.png" alt="Мой смайлик" class="custom-emoji" width="24" height="24">Плохая шутка:</h7><br><a href="https://ggbsshop.github.io/tgc/" target="_blank">
-        https://ggbsshop.github.io/tgc/;
-        </a>
-      <br><h7><img src="bullet.png" alt="Мой смайлик" class="custom-emoji" width="24" height="24">Правила моего чата:<h7></h7><br><a href="https://ggbsshop.github.io/tgcc/" target="_blank">
-        https://ggbsshop.github.io/tgcc/;
-        </a>
-      <br><h7><img src="bullet.png" alt="Мой смайлик" class="custom-emoji" width="24" height="24">Правила рабочего чата (использовать не стали):</h7><br><a href="https://ggbsshop.github.io/tgg/" target="_blank">
-        https://ggbsshop.github.io/tgg/;
-        </a>
-      <br><h7><img src="bullet.png" alt="Мой смайлик" class="custom-emoji" width="24" height="24">Правила лисьего чата (пока что использовать не стали):</h7><br><a href="https://ggbsshop.github.io/Fox_Chat_Rules/" target="_blank">
-        https://ggbsshop.github.io/Fox_Chat_Rules/;
-        </a>
-        <br><h7><img src="bullet.png" alt="Мой смайлик" class="custom-emoji" width="24" height="24">Telegram бот:</h7><br><a href="https://t.me/Sakura_nudes_Photos_bot" target="_blank">
-        https://t.me/Sakura_nudes_Photos_bot
-        </a>
-          <br>или<a href="https://t.me/SakuraArts_bot" target="_blank">
-        <br>https://t.me/SakuraArts_bot
-            <br>(Решил не указывать название, так как оно может отличаться)
-          </a>
-            <br>в любом случае мой код
-        <br><h7><img src="0.png" alt="Мой смайлик" class="custom-emoji" width="24" height="24">Gradient artist:</h7><br><a href="https://t.me/JGifts_bot" target="_blank">
-        https://t.me/JGifts_bot
-        </a>
-    </div>
-    
   </div>
 </body>
-    </html>
+</html>
